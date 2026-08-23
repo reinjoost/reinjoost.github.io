@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rein Joost — Roosikasvataja | Roosikataloog</title>
+<meta name="description" content="Rein Joost roosiaed Viimsis — roositaimede kataloog, kasvatame ja müüme erinevaid roosisorte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!-- 1. TOP GREEN BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="tel:5072436">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        5072436
+      </a>
+      <a href="mailto:reinjoost@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        reinjoost@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. MAIN HEADER ROW -->
+  <div class="header-main">
+    <div class="header-main-inner">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" data-i18n-placeholder="search">
+        <button type="button" id="voiceSearchBtn" class="voice-search-btn" data-i18n-title="voiceSearch" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </button>
+      </div>
+
+      <a href="#" class="logo-center" id="logoHome">
+        <div class="logo-name">REIN JOOST</div>
+        <div class="logo-sub">ROOSIKASVATAJA</div>
+      </a>
+
+      <div class="header-right">
+        <div class="lang-switch">
+          <button class="active" title="Eesti" data-lang="et">🇪🇪</button>
+          <button title="Русский" data-lang="ru">🇷🇺</button>
+          <button title="English" data-lang="en">🇬🇧</button>
+        </div>
+        <a class="cart-icon" href="#" data-i18n-title="cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </a>
+        <div class="burger-wrap">
+          <button class="burger" id="burgerBtn" data-i18n-aria="menu"><span></span><span></span><span></span></button>
+          <div class="burger-menu" id="burgerMenu">
+            <button type="button" class="burger-menu-item-btn" data-modal="about" data-i18n="about"></button>
+            <button type="button" class="burger-menu-item-btn" data-modal="visit" data-i18n="visit"></button>
+            <button type="button" class="burger-menu-item-btn" data-modal="faq" data-i18n="faqTitle"></button>
+            <button type="button" class="burger-menu-item-btn" data-modal="partners" data-i18n="partnersTitle"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="promo-banner">
+    <div class="promo-banner-inner" data-i18n="bannerText"></div>
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalAbout">
+      <button type="button" class="modal-close" data-close>&times;</button>
+      <img class="modal-photo" src="assets/rein-joost.jpg" alt="Rein Joost">
+      <a class="modal-youtube-link" href="https://www.youtube.com/watch?v=HbKDTkKeBgM&t=39s" target="_blank" rel="noopener" data-i18n="watchVideo"></a>
+    </div>
+    <div class="modal-box" id="modalVisit">
+      <button type="button" class="modal-close" data-close>&times;</button>
+      <p class="modal-address">Liilia tee 10, 74001 Viimsi</p>
+      <a class="modal-map" href="https://www.google.com/maps/place/Liilia+tee+10,+Viimsi,+74001+Harju+maakond/@59.4977656,24.8363135,16z" target="_blank" rel="noopener">
+        <img src="assets/liilia-tee-map.png" alt="Карта: Liilia tee 10, Viimsi">
+      </a>
+    </div>
+
+    <div class="modal-box modal-faq" id="modalFaq">
+      <button type="button" class="modal-close" data-close>&times;</button>
+      <h2 class="faq-title" data-i18n="faqTitle"></h2>
+      <div class="faq-content" id="faqContent"></div>
+    </div>
+
+    <div class="modal-box modal-faq" id="modalPartners">
+      <button type="button" class="modal-close" data-close>&times;</button>
+      <h2 class="faq-title" data-i18n="partnersTitle"></h2>
+      <div class="faq-content" id="partnersContent"></div>
+    </div>
+  </div>
+
+
+  
+
+  <!-- CATALOG VIEW -->
+  <section class="catalog-view" id="catalogView">
+    <div class="catalog-wrap">
+      <h2 class="catalog-heading" data-i18n="catalogTitle"></h2>
+
+      <button type="button" class="filters-toggle" id="filtersToggle">
+        <span data-i18n="filtersBtn"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+
+      <div class="catalog-layout">
+        <aside class="filters" id="filtersPanel">
+          <div class="filter-group">
+            <h3 data-i18n="fType"></h3>
+            <div id="filterType"></div>
+          </div>
+          <div class="filter-group">
+            <h3 data-i18n="fColor"></h3>
+            <div id="filterColor"></div>
+          </div>
+          <div class="filter-group">
+            <h3 data-i18n="fFragrance"></h3>
+            <label class="filter-option"><input type="checkbox" id="filterFragranceYes"><span data-i18n="fFragranceYes"></span></label>
+            <label class="filter-option"><input type="checkbox" id="filterFragranceNo"><span data-i18n="fFragranceNo"></span></label>
+          </div>
+          <div class="filter-group">
+            <h3 data-i18n="fPrice"></h3>
+            <div class="filter-price">
+              <input type="number" id="priceMin" placeholder="min" min="0">
+              <span>—</span>
+              <input type="number" id="priceMax" placeholder="max" min="0">
+            </div>
+          </div>
+          <div class="filter-group">
+            <h3 data-i18n="fAvailability"></h3>
+            <label class="filter-option"><input type="checkbox" id="filterInStock"><span data-i18n="fInStock"></span></label>
+          </div>
+          <button type="button" class="filter-reset" id="filterReset" data-i18n="fReset"></button>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <span class="catalog-count" id="catalogCount"></span>
+            <select class="sort-select" id="sortSelect">
+              <option value="name-asc" data-i18n="sortNameAsc"></option>
+              <option value="name-desc" data-i18n="sortNameDesc"></option>
+              <option value="price-asc" data-i18n="sortPriceAsc"></option>
+              <option value="price-desc" data-i18n="sortPriceDesc"></option>
+              <option value="height-asc" data-i18n="sortHeightAsc"></option>
+              <option value="height-desc" data-i18n="sortHeightDesc"></option>
+            </select>
+          </div>
+          <div class="rose-grid" id="roseGrid"></div>
+          <div id="showMoreWrap" style="display:none;text-align:center;margin-top:32px;">
+            <button type="button" id="showMoreBtn" class="filter-reset" style="display:inline-block;width:auto;padding:12px 40px;"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESSORIES (допродажи) -->
+  <section class="catalog-wrap" id="accessoriesSection" style="display:none;">
+    <h2 class="catalog-heading" data-i18n="accessoriesTitle"></h2>
+    <div class="rose-grid" id="accessoriesGrid"></div>
+  </section>
+
+  <footer data-i18n="footer"></footer>
+
+
+  <script>
+const translations = {
+      et: {
+        search: "Otsi lehelt",
+        visit: "Külasta meid",
+        about: "Meist",
+        cart: "Ostukorv",
+        menu: "Menüü",
+        video: "Vaata meist videot YouTube'is",
+        allRoses: "Kõik roosid",
+        byType: "Roosid tüübi järgi",
+        byColor: "Roosid värvi järgi",
+        buy: "Osta",
+        catalogTitle: "Roosikataloog",
+        catalogText: "Peagi ilmuvad siia roosisordid",
+        catalogEmpty: "Katalog on hetkel tühi",
+        footer: "© 2026 Rein Joost — Roosikasvataja. Kõik õigused kaitstud.",
+        watchVideo: "Vaata videot YouTube'is",
+        mapSoon: "Kaart lisatakse peagi",
+        filtersBtn: "Filtrid ja sorteerimine",
+        fType: "Kategooria",
+        fColor: "Värv",
+        fFragrance: "Lõhn",
+        fFragranceYes: "Lõhnav",
+        fFragranceNo: "Lõhnatu",
+        fPrice: "Hind (€)",
+        fAvailability: "Saadavus",
+        fInStock: "Ainult laos olevad",
+        fReset: "Lähtesta filtrid",
+        sortNameAsc: "Nimi (A–Y)",
+        sortNameDesc: "Nimi (Y–A)",
+        sortPriceAsc: "Hind (odavaim enne)",
+        sortPriceDesc: "Hind (kallim enne)",
+        sortHeightAsc: "Kõrgus (madalaim enne)",
+        sortHeightDesc: "Kõrgus (kõrgeim enne)",
+        catalogCount: "roosi",
+        backToCatalog: "Tagasi kataloogi",
+        addToCart: "Lisa ostukorvi",
+        deliverySoon: "kättesaadav peagi",
+        omadusedTitle: "Omadused",
+        omHeight: "Kõrgus",
+        omWidth: "Laius",
+        omColor: "Värv",
+        omBloom: "Õitseb",
+        omFragrance: "Lõhn",
+        yes: "Jah",
+        no: "Ei",
+        noResults: "Selle filtriga roose ei leitud",
+        breadcrumbHome: "Avaleht",
+        breadcrumbCatalog: "Roosikataloog",
+        faqTitle: "KKK",
+        showMore: "Näita rohkem",
+        voiceSearch: "Häälotsing",
+        bannerText: "Roosid aiale, terrassile, suvilale, rõdule ja esiaiale — koos nõustamise, arusaadava istutusjuhendiga ja toe garantiiga. Teil on kindlus, et roos kasvab ja näeb teie tingimustes ilus välja.",
+        partnersTitle: "Partneritele",
+        pickup: "Järele tulek kohapeal",
+        preorderBadge: "Ettetellimine",
+        priceOnRequest: "Hind küsimisel",
+        kitsTitle: "Valmislahendused",
+        accessoriesTitle: "Hooldustooted"
+      },
+      ru: {
+        search: "Найти на сайте",
+        visit: "Посети нас",
+        about: "О нас",
+        cart: "Корзина",
+        menu: "Меню",
+        video: "Смотреть видео о нас на YouTube",
+        allRoses: "Все розы",
+        byType: "Розы по типу",
+        byColor: "Розы по цвету",
+        buy: "Купить",
+        catalogTitle: "Каталог роз",
+        catalogText: "Скоро здесь появятся сорта роз",
+        catalogEmpty: "Каталог пока пуст",
+        footer: "© 2026 Rein Joost — Roosikasvataja. Все права защищены.",
+        watchVideo: "Смотреть видео на YouTube",
+        mapSoon: "Карта появится позже",
+        filtersBtn: "Фильтры и сортировка",
+        fType: "Категория",
+        fColor: "Цвет",
+        fFragrance: "Аромат",
+        fFragranceYes: "С ароматом",
+        fFragranceNo: "Без аромата",
+        fPrice: "Цена (€)",
+        fAvailability: "Наличие",
+        fInStock: "Только в наличии",
+        fReset: "Сбросить фильтры",
+        sortNameAsc: "Название (А–Я)",
+        sortNameDesc: "Название (Я–А)",
+        sortPriceAsc: "Цена (сначала дешевле)",
+        sortPriceDesc: "Цена (сначала дороже)",
+        sortHeightAsc: "Высота (сначала ниже)",
+        sortHeightDesc: "Высота (сначала выше)",
+        catalogCount: "роз",
+        backToCatalog: "Назад в каталог",
+        addToCart: "В корзину",
+        deliverySoon: "скоро будет доступна",
+        omadusedTitle: "Характеристики",
+        omHeight: "Высота",
+        omWidth: "Ширина",
+        omColor: "Цвет",
+        omBloom: "Цветение",
+        omFragrance: "Аромат",
+        yes: "Да",
+        no: "Нет",
+        noResults: "По этому фильтру роз не найдено",
+        breadcrumbHome: "Главная",
+        breadcrumbCatalog: "Каталог роз",
+        faqTitle: "Вопросы и ответы",
+        showMore: "Показать ещё",
+        voiceSearch: "Голосовой поиск",
+        bannerText: "Розы для сада, террасы, дачи, балкона и палисадника — с консультацией, понятной посадкой и гарантией поддержки. У вас есть уверенность, что роза приживётся и будет выглядеть красиво в ваших условиях.",
+        partnersTitle: "Партнёрам",
+        pickup: "Самовывоз",
+        preorderBadge: "Предзаказ",
+        priceOnRequest: "Цена по запросу",
+        kitsTitle: "Готовые решения",
+        accessoriesTitle: "Товары для ухода"
+      },
+      en: {
+        search: "Search the site",
+        visit: "Visit us",
+        about: "About us",
+        cart: "Cart",
+        menu: "Menu",
+        video: "Watch our video on YouTube",
+        allRoses: "All roses",
+        byType: "Roses by type",
+        byColor: "Roses by colour",
+        buy: "Buy",
+        catalogTitle: "Rose catalogue",
+        catalogText: "Rose varieties coming soon",
+        catalogEmpty: "Catalogue is empty",
+        footer: "© 2026 Rein Joost — Rose Grower. All rights reserved.",
+        watchVideo: "Watch the video on YouTube",
+        mapSoon: "Map coming soon",
+        filtersBtn: "Filters and sorting",
+        fType: "Category",
+        fColor: "Colour",
+        fFragrance: "Fragrance",
+        fFragranceYes: "Fragrant",
+        fFragranceNo: "No fragrance",
+        fPrice: "Price (€)",
+        fAvailability: "Availability",
+        fInStock: "In stock only",
+        fReset: "Reset filters",
+        sortNameAsc: "Name (A–Z)",
+        sortNameDesc: "Name (Z–A)",
+        sortPriceAsc: "Price (low to high)",
+        sortPriceDesc: "Price (high to low)",
+        sortHeightAsc: "Height (low to high)",
+        sortHeightDesc: "Height (high to low)",
+        catalogCount: "roses",
+        backToCatalog: "Back to catalogue",
+        addToCart: "Add to cart",
+        deliverySoon: "coming soon",
+        omadusedTitle: "Characteristics",
+        omHeight: "Height",
+        omWidth: "Width",
+        omColor: "Colour",
+        omBloom: "Blooms",
+        omFragrance: "Fragrance",
+        yes: "Yes",
+        no: "No",
+        noResults: "No roses found for this filter",
+        breadcrumbHome: "Home",
+        breadcrumbCatalog: "Rose catalogue",
+        faqTitle: "FAQ",
+        showMore: "Show more",
+        voiceSearch: "Voice search",
+        bannerText: "Roses for the garden, terrace, cottage, balcony and front yard — with consultation, clear planting guidance and a support guarantee. You can be confident your rose will take root and look beautiful in your conditions.",
+        partnersTitle: "For Partners",
+        pickup: "Self pick-up",
+        preorderBadge: "Pre-order",
+        priceOnRequest: "Price on request",
+        kitsTitle: "Ready-made solutions",
+        accessoriesTitle: "Care products"
+      }
+    };
+
+    function setLang(lang){
+      localStorage.setItem('reinjoost_lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        el.textContent = translations[lang][el.dataset.i18n];
+      });
+      const search = document.getElementById('searchInput');
+      if(search) search.placeholder = translations[lang].search;
+      document.querySelectorAll('[data-i18n-title]').forEach(el=>{
+        el.title = translations[lang][el.dataset.i18nTitle];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+        el.setAttribute('aria-label', translations[lang][el.dataset.i18nAria]);
+      });
+      document.querySelectorAll('.lang-switch button').forEach(btn=>{
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+      if(typeof refreshCatalogLang === 'function') refreshCatalogLang(lang);
+    }
+
+    document.querySelectorAll('.lang-switch button').forEach(btn=>{
+      btn.addEventListener('click', ()=> setLang(btn.dataset.lang));
+    });
+
+
+    const FAQ_DATA = {
+      et: {
+        qa: [
+          {q:"Kuidas õigesti istutada teehübriidroose kevadel?", a:"Istutage roosid kevadel, kui muld on soojenenud +10°C-ni, päikesepaistelisse kohta, kus vesi ei seisa. Istutusauk peab olema piisavalt avar ning juurekael mattatakse pärast istutamist umbes 3–5 cm sügavusele."},
+          {q:"Kuidas katta roose talveks?", a:"Enne talvitumist roosid lõigatakse, mullatakse kuiva mulla või kompostiga ning paigaldatakse õhk-kuiv kate. Oluline on kattega mitte kiirustada: seda tehakse pärast püsivate külmade saabumist (näiteks detsembri alguses), et taimed ei läppuks."},
+          {q:"Millist mulda vajavad teehübriidroosid?", a:"Roosid eelistavad viljakat, kobedat ja hästi läbilaskvat mulda, mille reaktsioon on neutraalne või nõrgalt happeline. Istutamiseks võib kasutada spetsiaalset roosimulda koos komposti ja mulda kobestavate materjalidega."},
+          {q:"Kas roosid taluvad varju ja kuidas nende eest hoolitseda?", a:"Teehübriidroosidele sobib kõige paremini päikesepaisteline koht: varjus õitsevad nad halvemini ja haigestuvad sagedamini. Hooldus hõlmab regulaarset kastmist, väetamist, õitsenud pungade eemaldamist ja lõikamist; istikute valikul pöörake tähelepanu tervele juurestikule ja hästi arenenud võrsetele."}
+        ],
+        stepsTitle: "Kuidas lõigata teehübriidroose sügisel",
+        steps: [
+          "Eemaldage põõsalt kõik lehed — eriti kui neil on laike või haigustunnuseid.",
+          "Lõigake välja kuivad, haiged, nõrgad ja peenikesed võrsed.",
+          "Allesjäänud tugevad võrsed lühendage umbes 30–50 cm-ni, jättes 4–6 hästi arenenud pungad.",
+          "Tehke lõige viltu, umbes 0,5–1 cm väljapoole jääva punga kohalt.",
+          "Pärast lõikamist tuleks põõsa alust mullata kuiva mulla või kompostiga 15–20 cm ulatuses ning seejärel katta."
+        ],
+        note: "Oluline: roose ei tasu liiga vara, kui on veel soe, tugevalt lõigata. Sügisene lõikamine tuleks teha lähemal püsivatele külmadele (näiteks 15.10–15.11), muidu võivad pärast lõikamist ärgata uued pungad. Ja veel: kui soovite, et põõsas oleks järgmisel suvel lopsakas ja rohkete õitega, tehke kujundav lõikamine lisaks kevadel, sügisel aga sanitaarne ja mõõdukas lühendamine."
+      },
+      ru: {
+        qa: [
+          {q:"Как правильно посадить чайно-гибридные розы весной?", a:"Высаживайте розы весной, когда почва прогреется до +10°C, на солнечном месте без застоя воды. Посадочная яма должна быть достаточно просторной, а корневую шейку после посадки заглубляют примерно на 3–5 см."},
+          {q:"Как укрывать розы на зиму?", a:"Перед зимовкой розы обрезают, окучивают сухой землёй или компостом и устанавливают воздушно-сухое укрытие. Важно не торопиться с укрытием: его делают после наступления устойчивых заморозков (например, начало декабря), чтобы растения не выпревали."},
+          {q:"Какой почвогрунт нужен чайно-гибридным розам?", a:"Розы предпочитают плодородный, рыхлый и хорошо дренированный почвогрунт с нейтральной или слабокислой реакцией. Для посадки можно использовать специальный грунт для роз с добавлением компоста и разрыхляющих материалов."},
+          {q:"Переносят ли розы тень и как ухаживать за ними?", a:"Чайно-гибридным розам лучше всего подходит солнечное место: в тени они хуже цветут и чаще болеют. Уход включает регулярный полив, подкормки, удаление отцветших бутонов и обрезку; при выборе саженцев обращайте внимание на здоровую корневую систему и хорошо развитые побеги."}
+        ],
+        stepsTitle: "Как обрезать чайно-гибридные розы осенью",
+        steps: [
+          "Удалите все листья с куста — особенно если они имеют пятна или признаки болезней.",
+          "Вырежьте сухие, больные, слабые и тонкие побеги.",
+          "Оставшиеся сильные побеги укоротите примерно до 30–50 см, оставляя 4–6 хорошо развитых почек.",
+          "Срез делайте наискосок, примерно на 0,5–1 см выше наружной почки.",
+          "После обрезки основание куста желательно окучить сухой землёй или компостом на 15–20 см, а затем укрыть."
+        ],
+        note: "Важный момент: не стоит сильно обрезать розы слишком рано, пока ещё тепло. Осенняя обрезка должна проводиться ближе к устойчивым заморозкам (например, 15.10–15.11), иначе после обрезки могут проснуться новые почки. И ещё: если вы хотите, чтобы куст был пышным и с большим количеством цветов следующим летом, дополнительно формирующую обрезку делайте весной, а осенью — санитарную и умеренное укорачивание."
+      },
+      en: {
+        qa: [
+          {q:"How to properly plant hybrid tea roses in spring?", a:"Plant roses in spring once the soil has warmed to +10°C, in a sunny spot with no standing water. The planting hole should be spacious enough, and the root collar is buried about 3–5 cm deep after planting."},
+          {q:"How to cover roses for winter?", a:"Before winter, roses are pruned, mounded with dry soil or compost, and covered with an air-dry shelter. It's important not to rush the covering: it's done after steady frosts set in (for example, early December), so the plants don't rot from dampness."},
+          {q:"What soil do hybrid tea roses need?", a:"Roses prefer fertile, loose, well-drained soil with a neutral or slightly acidic reaction. Special rose soil mixed with compost and loosening material can be used for planting."},
+          {q:"Do roses tolerate shade, and how to care for them?", a:"Hybrid tea roses do best in a sunny spot: in shade they bloom worse and get sick more often. Care includes regular watering, feeding, removing spent blooms, and pruning; when choosing seedlings, look for a healthy root system and well-developed shoots."}
+        ],
+        stepsTitle: "How to prune hybrid tea roses in autumn",
+        steps: [
+          "Remove all leaves from the bush — especially if they have spots or signs of disease.",
+          "Cut out dry, diseased, weak and thin shoots.",
+          "Shorten the remaining strong shoots to about 30–50 cm, leaving 4–6 well-developed buds.",
+          "Make the cut at an angle, about 0.5–1 cm above an outward-facing bud.",
+          "After pruning, mound the base of the bush with dry soil or compost 15–20 cm high, then cover it."
+        ],
+        note: "Important: don't prune roses too hard too early while it's still warm. Autumn pruning should be done closer to steady frosts (e.g., 15.10–15.11), otherwise new buds may wake up after pruning. Also: if you want the bush to be lush with plenty of blooms next summer, do additional shaping pruning in spring, and sanitary, moderate shortening in autumn."
+      }
+    };
+
+    function renderFaq(lang){
+      const data = FAQ_DATA[lang];
+      const box = document.getElementById('faqContent');
+      let html = '';
+      data.qa.forEach(item => {
+        html += `<div class="faq-item"><div class="faq-question">${item.q}</div><div class="faq-answer">${item.a}</div></div>`;
+      });
+      html += `<div class="faq-section-title">${data.stepsTitle}</div>`;
+      html += '<ol class="faq-steps">';
+      data.steps.forEach(s => { html += `<li>${s}</li>`; });
+      html += '</ol>';
+      html += `<div class="faq-note">${data.note}</div>`;
+      box.innerHTML = html;
+    }
+
+    const burgerBtnEl = document.getElementById('burgerBtn');
+    const burgerMenuEl = document.getElementById('burgerMenu');
+    burgerBtnEl.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      burgerMenuEl.classList.toggle('open');
+    });
+    document.addEventListener('click', (e)=>{
+      if(!burgerMenuEl.contains(e.target) && e.target !== burgerBtnEl){
+        burgerMenuEl.classList.remove('open');
+      }
+    });
+
+    const modalOverlayEl = document.getElementById('modalOverlay');
+    const modalAboutBox = document.getElementById('modalAbout');
+    const modalVisitBox = document.getElementById('modalVisit');
+    const modalFaqBox = document.getElementById('modalFaq');
+    const modalPartnersBox = document.getElementById('modalPartners');
+    const modals = { about: modalAboutBox, visit: modalVisitBox, faq: modalFaqBox, partners: modalPartnersBox };
+
+    const PARTNERS_TEXT = {
+      et: {
+        p1: "Pakume koostööd aednikele, maastikukujundajatele, väikestele aiakeskustele ja suvilaühistutele: hulgihinnad, järjepidevad tarned ja isiklik nõustamine sortide valikul.",
+        p2: "Kui soovite koostööd teha, võtke meiega ühendust:",
+      },
+      ru: {
+        p1: "Предлагаем сотрудничество садовникам, ландшафтным дизайнерам, небольшим садовым центрам и садоводческим товариществам: оптовые цены, стабильные поставки и личная консультация по подбору сортов.",
+        p2: "Если хотите сотрудничать — свяжитесь с нами:",
+      },
+      en: {
+        p1: "We offer cooperation to gardeners, landscape designers, small garden centres and dacha communities: wholesale pricing, reliable supply and personal advice on choosing varieties.",
+        p2: "If you'd like to cooperate, get in touch with us:",
+      },
+    };
+    function renderPartners(lang){
+      const t = PARTNERS_TEXT[lang];
+      document.getElementById('partnersContent').innerHTML = `
+        <p style="margin-bottom:14px;">${t.p1}</p>
+        <p style="margin-bottom:10px;">${t.p2}</p>
+        <p style="font-weight:600;color:var(--green-dark);">
+          <a href="mailto:reinjoost@gmail.com" style="color:inherit;">reinjoost@gmail.com</a><br>
+          <a href="tel:5072436" style="color:inherit;">5072436</a>
+        </p>
+      `;
+    }
+
+    function openModal(name){
+      Object.values(modals).forEach(m => m.classList.remove('open'));
+      modals[name].classList.add('open');
+      modalOverlayEl.classList.add('open');
+      burgerMenuEl.classList.remove('open');
+      if(name === 'faq') renderFaq(currentLang);
+      if(name === 'partners') renderPartners(currentLang);
+    }
+    function closeModal(){
+      modalOverlayEl.classList.remove('open');
+      Object.values(modals).forEach(m => m.classList.remove('open'));
+    }
+
+    document.querySelectorAll('.burger-menu-item-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        openModal(btn.dataset.modal);
+      });
+    });
+    document.querySelectorAll('[data-close]').forEach(btn=>{
+      btn.addEventListener('click', closeModal);
+    });
+    modalOverlayEl.addEventListener('click', (e)=>{
+      if(e.target === modalOverlayEl) closeModal();
+    });
+
+
+    // ===================== CATALOG LOGIC =====================
+
+
+    // ===================== CATALOG LOGIC (v2 — данные из JSON, постраничный вывод) =====================
+    let ALL_ROSES = [];
+    let currentLang = 'et';
+    let currentFilters = { types:new Set(), colors:new Set(), fragranceYes:false, fragranceNo:false, priceMin:null, priceMax:null, inStock:false };
+    let currentSort = 'name-asc';
+    let currentSearch = '';
+    const PAGE_SIZE = 24;
+    let visibleCount = PAGE_SIZE;
+
+    function heightSortKey(str){
+      const m = String(str).replace(',', '.').match(/[\d.]+/);
+      return m ? parseFloat(m[0]) : 0;
+    }
+
+    function buildFilterOptions(){
+      const typeBox = document.getElementById('filterType');
+      const colorBox = document.getElementById('filterColor');
+      typeBox.innerHTML = '';
+      colorBox.innerHTML = '';
+      const types = Array.from(new Set(ALL_ROSES.map(r => r.type[currentLang]).filter(Boolean)));
+      const colors = Array.from(new Set(ALL_ROSES.flatMap(r => r.color[currentLang]).filter(Boolean)));
+      types.forEach(t => {
+        const id = 'type_' + t.replace(/\W+/g,'_');
+        const label = document.createElement('label');
+        label.className = 'filter-option';
+        label.innerHTML = `<input type="checkbox" data-type="${t}" id="${id}"><span>${t}</span>`;
+        typeBox.appendChild(label);
+      });
+      colors.forEach(c => {
+        const id = 'color_' + c.replace(/\W+/g,'_');
+        const label = document.createElement('label');
+        label.className = 'filter-option';
+        label.innerHTML = `<input type="checkbox" data-color="${c}" id="${id}"><span>${c}</span>`;
+        colorBox.appendChild(label);
+      });
+      typeBox.querySelectorAll('input').forEach(cb => cb.addEventListener('change', onFilterChange));
+      colorBox.querySelectorAll('input').forEach(cb => cb.addEventListener('change', onFilterChange));
+    }
+
+    function onFilterChange(){
+      currentFilters.types = new Set(Array.from(document.querySelectorAll('#filterType input:checked')).map(i=>i.dataset.type));
+      currentFilters.colors = new Set(Array.from(document.querySelectorAll('#filterColor input:checked')).map(i=>i.dataset.color));
+      currentFilters.fragranceYes = document.getElementById('filterFragranceYes').checked;
+      currentFilters.fragranceNo = document.getElementById('filterFragranceNo').checked;
+      currentFilters.inStock = document.getElementById('filterInStock').checked;
+      const pmin = document.getElementById('priceMin').value;
+      const pmax = document.getElementById('priceMax').value;
+      currentFilters.priceMin = pmin ? parseFloat(pmin) : null;
+      currentFilters.priceMax = pmax ? parseFloat(pmax) : null;
+      visibleCount = PAGE_SIZE;
+      renderGrid();
+    }
+
+    function applyFilters(list){
+      return list.filter(r => {
+        if(currentSearch){
+          const nameMatch = r.name.toLowerCase().includes(currentSearch);
+          const aliasMatch = (r.searchAliases||[]).some(a => a.toLowerCase().includes(currentSearch));
+          if(!nameMatch && !aliasMatch) return false;
+        }
+        if(currentFilters.types.size && !currentFilters.types.has(r.type[currentLang])) return false;
+        if(currentFilters.colors.size && !r.color[currentLang].some(c => currentFilters.colors.has(c))) return false;
+        if(currentFilters.fragranceYes && !currentFilters.fragranceNo && !r.fragrance) return false;
+        if(currentFilters.fragranceNo && !currentFilters.fragranceYes && r.fragrance) return false;
+        if(currentFilters.priceMin !== null && r.price < currentFilters.priceMin) return false;
+        if(currentFilters.priceMax !== null && r.price > currentFilters.priceMax) return false;
+        if(currentFilters.inStock && r.stock <= 0) return false;
+        return true;
+      });
+    }
+
+    function applySort(list){
+      const sorted = list.slice();
+      sorted.sort((a,b)=>{
+        const groupDiff = (a.isKit?1:0) - (b.isKit?1:0);
+        if(groupDiff !== 0) return groupDiff;
+        switch(currentSort){
+          case 'name-asc': return a.name.localeCompare(b.name);
+          case 'name-desc': return b.name.localeCompare(a.name);
+          case 'price-asc': return a.price - b.price;
+          case 'price-desc': return b.price - a.price;
+          case 'height-asc': return heightSortKey(a.height) - heightSortKey(b.height);
+          case 'height-desc': return heightSortKey(b.height) - heightSortKey(a.height);
+          default: return 0;
+        }
+      });
+      return sorted;
+    }
+
+    function renderGrid(){
+      const grid = document.getElementById('roseGrid');
+      const filtered = applySort(applyFilters(ALL_ROSES));
+      const t = translations[currentLang];
+      document.getElementById('catalogCount').textContent = filtered.length + ' ' + t.catalogCount;
+      grid.innerHTML = '';
+
+      if(!filtered.length){
+        const empty = document.createElement('div');
+        empty.className = 'catalog-empty-state';
+        empty.textContent = t.noResults;
+        grid.appendChild(empty);
+        document.getElementById('showMoreWrap').style.display = 'none';
+        return;
+      }
+
+      const toShow = filtered.slice(0, visibleCount);
+      toShow.forEach(r => {
+        const t2 = translations[currentLang];
+        const displayName = r.isKit && r.nameByLang ? (r.nameByLang[currentLang] || r.name) : r.name;
+        const priceHtml = r.price ? `${Number(r.price).toFixed(2)} €` : `<span class="price-on-request">${t2.priceOnRequest}</span>`;
+        const priceBlock = r.isKit ? '' : `<div class="rose-card-price">${priceHtml}</div>`;
+        const preorderHtml = r.preorder ? `<span class="preorder-badge card-badge">${t2.preorderBadge}</span>` : '';
+        const card = document.createElement('a');
+        card.href = r.url;
+        card.className = 'rose-card';
+        card.innerHTML = `
+          <div class="rose-card-photo">
+            <img src="${r.thumb}" alt="${displayName}" loading="lazy">
+            <div class="rose-card-cart">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            ${preorderHtml}
+          </div>
+          <div class="rose-card-body">
+            <div class="rose-card-name">${displayName}</div>
+            <div class="rose-card-type">${r.type[currentLang]}</div>
+            ${priceBlock}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      const showMoreWrap = document.getElementById('showMoreWrap');
+      if(visibleCount < filtered.length){
+        showMoreWrap.style.display = 'block';
+        document.getElementById('showMoreBtn').textContent = t.showMore;
+      } else {
+        showMoreWrap.style.display = 'none';
+      }
+    }
+
+    document.getElementById('showMoreBtn').addEventListener('click', ()=>{
+      visibleCount += PAGE_SIZE;
+      renderGrid();
+    });
+
+    const searchInputEl = document.getElementById('searchInput');
+    if(searchInputEl){
+      searchInputEl.addEventListener('input', (e)=>{
+        currentSearch = e.target.value.trim().toLowerCase();
+        visibleCount = PAGE_SIZE;
+        renderGrid();
+      });
+    }
+
+    // ===== Голосовой поиск (Web Speech API) =====
+    const voiceBtn = document.getElementById('voiceSearchBtn');
+    const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(voiceBtn && SpeechRecognitionCtor && searchInputEl){
+      voiceBtn.hidden = false;
+      const recognition = new SpeechRecognitionCtor();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      const langMap = { et: 'et-EE', ru: 'ru-RU', en: 'en-US' };
+
+      voiceBtn.addEventListener('click', ()=>{
+        recognition.lang = langMap[currentLang] || 'et-EE';
+        try{
+          recognition.start();
+          voiceBtn.classList.add('listening');
+        }catch(e){ /* уже слушает — игнорируем */ }
+      });
+      recognition.addEventListener('result', (e)=>{
+        const text = e.results[0][0].transcript;
+        searchInputEl.value = text;
+        currentSearch = text.trim().toLowerCase();
+        visibleCount = PAGE_SIZE;
+        renderGrid();
+      });
+      recognition.addEventListener('end', ()=>{
+        voiceBtn.classList.remove('listening');
+      });
+      recognition.addEventListener('error', ()=>{
+        voiceBtn.classList.remove('listening');
+      });
+    }
+
+    document.getElementById('priceMin').addEventListener('input', onFilterChange);
+    document.getElementById('priceMax').addEventListener('input', onFilterChange);
+    document.getElementById('filterInStock').addEventListener('change', onFilterChange);
+    document.getElementById('filterFragranceYes').addEventListener('change', onFilterChange);
+    document.getElementById('filterFragranceNo').addEventListener('change', onFilterChange);
+
+    document.getElementById('filterReset').addEventListener('click', ()=>{
+      document.querySelectorAll('#filterType input, #filterColor input, #filterFragranceYes, #filterFragranceNo, #filterInStock').forEach(i=>i.checked=false);
+      document.getElementById('priceMin').value = '';
+      document.getElementById('priceMax').value = '';
+      currentFilters = { types:new Set(), colors:new Set(), fragranceYes:false, fragranceNo:false, priceMin:null, priceMax:null, inStock:false };
+      visibleCount = PAGE_SIZE;
+      renderGrid();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', (e)=>{
+      currentSort = e.target.value;
+      visibleCount = PAGE_SIZE;
+      renderGrid();
+    });
+
+    document.getElementById('filtersToggle').addEventListener('click', ()=>{
+      document.getElementById('filtersPanel').classList.toggle('open');
+      document.getElementById('filtersToggle').classList.toggle('open');
+    });
+
+    function refreshCatalogLang(lang){
+      currentLang = lang;
+      buildFilterOptions();
+      renderGrid();
+      if(typeof renderAccessories === 'function') renderAccessories();
+      if(modalFaqBox && modalFaqBox.classList.contains('open')) renderFaq(lang);
+      if(modalPartnersBox && modalPartnersBox.classList.contains('open')) renderPartners(lang);
+    }
+
+    const logoHomeEl = document.getElementById('logoHome');
+    if(logoHomeEl){
+      logoHomeEl.addEventListener('click', (e)=>{
+        e.preventDefault();
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    }
+
+    // ===== Загрузка данных каталога (розы + наборы — единый каталог) =====
+    Promise.all([
+      fetch('data/roses.json').then(res => res.json()),
+      fetch('data/kits.json').then(res => res.ok ? res.json() : []).catch(()=>[]),
+    ])
+      .then(([roses, kits]) => {
+        ALL_ROSES = roses.concat(kits);
+        buildFilterOptions();
+        renderGrid();
+      })
+      .catch(err => {
+        document.getElementById('roseGrid').innerHTML =
+          '<div class="catalog-empty-state">Ошибка загрузки каталога. Обновите страницу или свяжитесь с нами.</div>';
+        console.error('Не удалось загрузить каталог', err);
+      });
+
+    // ===== Товары для ухода (допродажи) — отдельный блок, переводится при смене языка =====
+    let ALL_ACCESSORIES = [];
+    function renderAccessories(){
+      if(!ALL_ACCESSORIES.length) return;
+      document.getElementById('accessoriesSection').style.display = 'block';
+      const grid = document.getElementById('accessoriesGrid');
+      grid.innerHTML = '';
+      ALL_ACCESSORIES.forEach(a => {
+        const priceHtml = a.price ? `${Number(a.price).toFixed(2)} €` : `<span class="price-on-request">${translations[currentLang].priceOnRequest}</span>`;
+        const card = document.createElement('a');
+        card.href = a.url;
+        card.className = 'rose-card';
+        card.innerHTML = `
+          <div class="rose-card-photo">
+            <img src="${a.thumb}" alt="${a.name}" loading="lazy">
+          </div>
+          <div class="rose-card-body">
+            <div class="rose-card-name">${a.name}</div>
+            <div class="rose-card-type">${a.category || ''}</div>
+            <div class="rose-card-price">${priceHtml}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    fetch('data/accessories.json')
+      .then(res => res.ok ? res.json() : [])
+      .then(data => {
+        ALL_ACCESSORIES = data || [];
+        renderAccessories();
+      })
+      .catch(()=>{});
+
+    setLang(localStorage.getItem('reinjoost_lang') || 'et');
+  </script>
+</body>
+</html>

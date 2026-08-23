@@ -1,0 +1,17 @@
+# Rein Joost — Roosikasvataja
+
+> Roosiaed Eestis (Viimsi). Kasvatame ja müüme roositaimi — üle 8 sordi, mitmes värvis ja tüübis.
+
+## Peamised lehed
+- Kataloog: https://reinjoost.github.io/index.html
+- Sitemap: https://reinjoost.github.io/sitemap.xml
+
+## Roosid
+- [Amsterdam](https://reinjoost.github.io/roses/amsterdam.html) — Peenraroos, Oranž, Punane
+- [Aspirin](https://reinjoost.github.io/roses/aspirin.html) — Peenraroos, Valge, Kreemikas
+- [Rapsody Blue](https://reinjoost.github.io/roses/rapsody-blue.html) — Peenraroos, Lilla
+- [John Davis](https://reinjoost.github.io/roses/john-davis.html) — Pargiroos, Roosa
+- [Hansa Land](https://reinjoost.github.io/roses/hansa-land.html) — Pargiroos, Punane
+- [Piccolo](https://reinjoost.github.io/roses/piccolo.html) — Peenraroos, Oranž
+- [Rody](https://reinjoost.github.io/roses/rody.html) — Pinnakatteroos, Vaarikas, Punane
+- [Inglise roos](https://reinjoost.github.io/roses/inglise-roos.html) — Peenraroos, Oranž
